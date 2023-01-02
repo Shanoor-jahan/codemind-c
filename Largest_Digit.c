@@ -5,14 +5,12 @@ int main()
     scanf("%d",&num);
     while(num>0)
     {
-    rem=num%10;
-    if(rem>large)
-    {
-        large=rem;
+        rem=num%10;
+        if(rem>large)
+        {
+            large=rem;
+        }
+        num=num/10;
     }
-    num=num/10;
-}
-printf("%d
-",large);
-return 0;
+    printf("%d",large);
 }
