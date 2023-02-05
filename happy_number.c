@@ -15,12 +15,14 @@ int main()
     int num;
     scanf("%d",&num);
     int result=num;
-    while(result!=1 && result!=4)
+    while(result!=1&&result!=4)
     {
         result=hn(result);
     }
     if(result==1)
-    printf("True");
+    {
+        printf("True");
+    }
     else
     printf("False");
 }
