@@ -11,7 +11,9 @@ int main()
         n=n/10;
     }
     if(s%c==t)
-    printf("Automorphic Number");
+    {
+        printf("Automorphic Number");
+    }
     else
     printf("Not an Automorphic Number");
 }
