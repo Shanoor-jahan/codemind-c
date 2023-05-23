@@ -1,51 +1,46 @@
 #include<stdio.h>
 int main()
 {
-    #define max 100
-    int n,arr[max];
-    int skip[max];
-    int sum =0;
-    int items =0;
-    double res;
-    scanf("%d",&n);
-    if(n > max)
+    int i,n,j,k,l,a[100],c=1,p=0,m=0,z=0;
+    scanf("%d" ,&n);
+    for(i=0;i<n;i++)
     {
-        printf("invalid argument");
-        return 1;
+        scanf("%d" ,&a[i]);
     }
-    for(int i=0;i<n;++i)
-    {
-        scanf("%d",&arr[i]);
-        skip[i]=0;
-    }
-    for(int i=0;i<n;i++)
-    {
-        int count = 0;
-        if(skip[i]) continue;
-        for(int j=0;j<n;j++)
+        float s=0;
+        for(i=0;i<n;i++)
         {
-            if(arr[i]==arr[j])
+            for(j=i+1;j<n;j++)
+            {if(a[i]==a[j])
             {
-                ++count;
-                skip[j]=1;
+                for(l=j;l<n;l++)
+                {
+                    a[l]=a[l+1];
+                }
+                j--;
+                n--;
+                c++;
             }
+            }
+            if(c==a[i])
+            {
+            p++;
+            s=s+a[i];
+            }
+            else
+            {
+                z++;
+                
+            }
+            c=1;
+            
         }
-        if(arr[i]==count)
+        if(z!=n)
         {
-            sum+=arr[i];
-            ++items;
+            printf("%.2f" ,s/p);
         }
-    }
-    if(items == 0)
-    {
-        printf("-1");
-    }
-    else
-    {
-        res = ((double)sum)/items;
-        printf("%.2f",res);
-    }
-    printf("
-");
-    return 0;
+        else
+        {
+            printf("-1" );
+        }
 }
